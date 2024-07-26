@@ -8,12 +8,15 @@ from matplotlib import pyplot as plt
 
 class Network(object):
     def __init__(self, sizes):
-        # sizes contains a list where each number in that list represents the number of neurons for that layer
+        # layers will be the size of the list called "sizes"
         self.num_layers = len(sizes)
+        # storing the list
         self.sizes = sizes
         # here we are creating a list of vectors which are one column of row size of sizes[i] not including the input layer
         # we use randn because it gives us vals with mean of 0 and st dev of 1
-        self.biases = [np.zeros((y, 1)) for y in sizes[1:]]
+        self.biases = [
+            np.zeros((y, 1)) for y in sizes[1:]
+        ]  # setting biases to zero is sufficient
         self.weights = [
             np.random.randn(y, x) * np.sqrt(2 / x)
             for x, y in zip(sizes[:-1], sizes[1:])
@@ -122,13 +125,3 @@ def softmax(z):  # this will be used for the output layer
     # return exp_z / np.sum(exp_z)
     exp_z = np.exp(z - np.max(z))  # for numerical stability
     return exp_z / np.sum(exp_z, axis=0)
-
-
-def sigmoid(z):
-    """The sigmoid function."""
-    return 1.0 / (1.0 + np.exp(-z))
-
-
-def sigmoid_prime(z):
-    """Derivative of the sigmoid function."""
-    return sigmoid(z) * (1 - sigmoid(z))
