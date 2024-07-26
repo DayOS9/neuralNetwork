@@ -17,17 +17,18 @@ class Network(object):
         self.biases = [
             np.zeros((y, 1)) for y in sizes[1:]
         ]  # setting biases to zero is sufficient
+        # He initialization done for the weights for it to be compatible with relu activation
         self.weights = [
             np.random.randn(y, x) * np.sqrt(2 / x)
             for x, y in zip(sizes[:-1], sizes[1:])
         ]
 
     def forwardprop(self, a):
-        # using sigmoid function as the activiation function
-        # perform dot product and addition of weights and bias and input which is then thrown into a function
-        # we will perfrom sigmoid except the last layer which will be for softmax
+        # using relu function as the activiation function
+        # for each node in the current layer, perfrom dot product and add the bias which will be passed to activation function
         for b, w in zip(self.biases[:-1], self.weights[:-1]):
             a = reLU(np.dot(w, a) + b)
+        # for the last layer, to keep the values between 0 and 1, we will use softmax function (essentially a probability)
         a = softmax(np.dot(self.weights[-1], a) + self.biases[-1])
         return a
 
@@ -41,6 +42,7 @@ class Network(object):
 
         for i in range(epochs):
             random.shuffle(training_data)
+            # create a list of mini batches ( a list containing lists in which consist of tuples (data, label) )
             mini_batches = [
                 training_data[j : j + mini_batch_size]
                 for j in range(0, n, mini_batch_size)
@@ -56,12 +58,16 @@ class Network(object):
                 print("Epoch {0} complete".format(i))
 
     def update_mini_batch(self, mini_batch, eta):
+        # the creation of the weights and biases but this time just zeroed out
         nabla_b = [np.zeros(b.shape) for b in self.biases]
         nabla_w = [np.zeros(w.shape) for w in self.biases]
         for x, y in mini_batch:
+            # for each img and label in minibatch, we will get back a new set of biases and weights
             delta_nabla_b, delta_nabla_w = self.backprop(x, y)
+            # we will simply add up all the weights and biases together from all the images in the mini batch
             nabla_b = [nb + dnb for nb, dnb in zip(nabla_b, delta_nabla_b)]
             nabla_w = [nw + dnw for nw, dnw in zip(nabla_w, delta_nabla_w)]
+        # the calculations for the new weights and biases calculated after finishing the mini batch
         self.weights = [
             w - (eta / len(mini_batch)) * nw for w, nw in zip(self.weights, nabla_w)
         ]
@@ -120,8 +126,5 @@ def reLU_prime(z):
 
 
 def softmax(z):  # this will be used for the output layer
-    # z_max = np.max(z)
-    # exp_z = np.exp(z - z_max)  # Subtracting the max value for numerical stability
-    # return exp_z / np.sum(exp_z)
     exp_z = np.exp(z - np.max(z))  # for numerical stability
     return exp_z / np.sum(exp_z, axis=0)
