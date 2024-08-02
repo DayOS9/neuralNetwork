@@ -1,9 +1,11 @@
 import random
-import tkinter as tk
 
 import numpy as np
-import seaborn as sb
-from matplotlib import pyplot as plt
+
+# import tkinter as tk
+
+# import seaborn as sb
+# from matplotlib import pyplot as plt
 
 
 class Network(object):
