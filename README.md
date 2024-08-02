@@ -14,5 +14,5 @@ data to display how effectively the network has adjusted the weights and biases.
 Python version: **3.11.9**  
 (should work with 3.xx.x >=)  
 
-numpy: **2.0.1**
+numpy: **2.0.1**  
 (have not tested with other versions but should be fine)  
