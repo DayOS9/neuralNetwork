@@ -16,3 +16,14 @@ Python version: **3.11.9**
 
 numpy: **2.0.1**  
 (have not tested with other versions but should be fine)  
+
+# How to use
+
+The three main files you only need are **net.py**, **mnist_data.py**, and the actual data  
+**mnist_data.pkl.gz**.  
+
+After downloading and having the necessary dependencies installed, simply run
+> python3 run.py  
+
+Output will be displayed on the terminal such as the current, past epochs, and the number of  
+correct images classified.
