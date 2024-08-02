@@ -25,4 +25,9 @@ After downloading and having the necessary dependencies installed, simply run
 > python3 run.py  
 
 Output will be displayed on the terminal such as the current, past epochs, and the number of  
-correct images classified.
+correct images classified.  
+
+# WIP
+
+This project is still a work-in-progress. There is current development for a feature to allow  
+the user to draw a number for it to be tested against the network.
