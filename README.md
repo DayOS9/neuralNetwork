@@ -2,6 +2,9 @@
 # neuralNetwork
 
 A neural network designed to recognize images of hand written digits from the [MNIST database.](https://en.wikipedia.org/wiki/MNIST_database)  
+> This project was largely influenced by the book "**Neural Networks and Deep Learning** by **Michael Nielson**"  
+> The code in this repo was adapted from what is in the book with modifications (such as refactoring, activation functions, other features)  
+
 This neural network can have its structure modified dynamically, specifying the amount of layers  
 and the number of neurons per layer.
 
