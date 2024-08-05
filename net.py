@@ -8,7 +8,7 @@ import numpy as np
 # from matplotlib import pyplot as plt
 
 
-class Network(object):
+class Network:
     def __init__(self, sizes):
         # layers will be the size of the list called "sizes"
         self.num_layers = len(sizes)
