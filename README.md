@@ -12,6 +12,8 @@ The data is split three sets (which two are only used for right now): validation
 training data. The network uses the training data to train the network and uses the test  
 data to display how effectively the network has adjusted the weights and biases.  
 
+Optionally, the user can also draw their own digits to be tested against the network.
+
 # Specifications/Dependencies
 
 Python version: **3.11.9**  
