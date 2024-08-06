@@ -13,6 +13,8 @@ training data. The network uses the training data to train the network and uses 
 data to display how effectively the network has adjusted the weights and biases.  
 
 Optionally, the user can also draw their own digits to be tested against the network.
+> This network has a peak recorded accuracy of 96.8 % !  
+> ReLU and softmax activation functions used
 
 # Specifications/Dependencies
 
@@ -46,4 +48,4 @@ If the drawing module is enabled, after one epoch, you will see a window pop up 
 This project is still a work-in-progress. Although the drawing module was just recently implemented,  
 there is still plans to modify and refine the feature. I plan on making the drawing module more dynamic  
 (additional buttons) and run concurrently with the main program for smoothness. Possible additional features  
-include real-time analysis and testing when the user is drawing.
+include real-time analysis and testing when the user is drawing. Also, looking for better algorithms and practices to improve the accuracy of the network is also actively being researched.
