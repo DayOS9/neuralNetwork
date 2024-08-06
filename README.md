@@ -36,7 +36,11 @@ After downloading and having the necessary dependencies installed, simply run
 Output will be displayed on the terminal such as the current, past epochs, and the number of  
 correct images classified.  
 
+The run.py file can be modified to adjust layers, nodes, learning rate, and if the drawing module will be used.
+
 # WIP
 
-This project is still a work-in-progress. There is current development for a feature to allow  
-the user to draw a number for it to be tested against the network.
+This project is still a work-in-progress. Although the drawing module was just recently implemented,  
+there is still plans to modify and refine the feature. I plan on making the drawing module more dynamic  
+(additional buttons) and run concurrently with the main program for smoothness. Possible additional features  
+include real-time analysis and testing when the user is drawing.
