@@ -2,10 +2,7 @@ import random
 
 import numpy as np
 
-# import tkinter as tk
-
-# import seaborn as sb
-# from matplotlib import pyplot as plt
+import draw
 
 
 class Network:
@@ -34,7 +31,9 @@ class Network:
         a = softmax(np.dot(self.weights[-1], a) + self.biases[-1])
         return a
 
-    def SGD(self, training_data, epochs, mini_batch_size, eta, test_data=None):
+    def SGD(
+        self, training_data, epochs, mini_batch_size, eta, test_data=None, drawer=False
+    ):
         if test_data:
             test_data = list(test_data)  # Convert zip object to list in Python 3
             n_test = len(test_data)
@@ -56,6 +55,10 @@ class Network:
                 print(
                     "Epoch {0}: {1} / {2}".format(i, self.evaluate(test_data), n_test)
                 )
+                if drawer:
+                    board = draw.Draw()
+                    results = board.start()
+                    print(np.argmax(self.forwardprop(results)))
             else:
                 print("Epoch {0} complete".format(i))
 
