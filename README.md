@@ -22,6 +22,10 @@ Python version: **3.11.9**
 numpy: **2.0.1**  
 (have not tested with other versions but should be fine)  
 
+--For the drawing module--  
+
+pillow (PIL): **10.4.0**
+
 # How to use
 
 The three main files you only need are **net.py**, **mnist_data.py**, and the actual data **mnist_data.pkl.gz**.  
