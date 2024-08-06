@@ -37,7 +37,9 @@ Output will be displayed on the terminal such as the current, past epochs, and t
 correct images classified.  
 
 The run.py file can be modified to adjust layers, nodes, learning rate, and if the drawing module will be used.  
-If the drawing module is enabled, after one epoch, you will see a window pop up with various buttons. Simply left click and drag to draw your digit. If you mess up, you can select the clear button. Otherwise, just hit save and close the window to see what the neural network thinks the digit is in the terminal.
+If the drawing module is enabled, after one epoch, you will see a window pop up with various buttons. Simply left click and drag to draw your digit. If you mess up, you can select the clear button. Otherwise, just hit save and close the window to see what the neural network thinks the digit is in the terminal.  
+
+! [image info](./window.png)
 
 # WIP
 
